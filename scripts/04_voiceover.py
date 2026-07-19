@@ -54,7 +54,7 @@ def main():
             return find_audio_url(res)
 
         fp = fingerprint(model, text, args.voice_id)
-        run_cached(f"vo:{sid}", fp, out, fn, force=args.force)
+        run_cached(f"vo:{sid}", fp, out, fn, force=args.force, model=model)
 
     print("\nVO lines in work/audio/vo_*.mp3 — listen to a couple; if the voice is off,")
     print("re-run with --voice-id (see the model's API page) --force.")

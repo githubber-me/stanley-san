@@ -52,7 +52,7 @@ def main():
 
     fp = fingerprint(model, str(sorted(arguments.items())), args.take)
     run_cached(f"music:take{args.take}:{'inst' if args.instrumental else 'vocal'}",
-               fp, out, fn, force=args.force)
+               fp, out, fn, force=args.force, model=model)
     print(f"\nListen to {out}. Generate more takes with --take N, then pass the winner "
           "to 05_assemble.py --song <path>.")
 

@@ -77,7 +77,7 @@ def main():
             return find_video_url(res)
 
         fp = fingerprint(args.model, prompt, still.name)
-        run_cached(f"clip:{sid}", fp, out, fn, force=args.force)
+        run_cached(f"clip:{sid}", fp, out, fn, force=args.force, model=args.model)
 
     print("\nAll clips in work/clips/ — spot-check each one: no face morphing, no costume")
     print("changes, no extra people (group shot must keep all 13).")

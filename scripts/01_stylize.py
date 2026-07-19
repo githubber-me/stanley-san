@@ -72,6 +72,7 @@ def main():
                 return find_image_url(res)
 
             fp = fingerprint(KONTEXT_MODEL, prompt, shot["source"])
+            model_used = KONTEXT_MODEL
         else:
             prompt = shot["still_prompt"] + T2I_STYLE
 
@@ -84,8 +85,9 @@ def main():
                 return find_image_url(res)
 
             fp = fingerprint(T2I_MODEL, prompt)
+            model_used = T2I_MODEL
 
-        run_cached(f"still:{sid}", fp, out, fn, force=args.force)
+        run_cached(f"still:{sid}", fp, out, fn, force=args.force, model=model_used)
 
     print("\nAll stills in work/stills/ — REVIEW THEM (identity, costume, full anime look)")
     print("before spending on video. Re-roll any shot: 01_stylize.py --only <id> --force")
