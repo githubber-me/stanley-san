@@ -51,13 +51,14 @@
       "duration": 4,
       "narration": null,
       "still_prompt": "Keep his green misty hill-trail setting as a lush painted anime landscape: monsoon foliage in vivid greens, fog rolling over the trail, old blue railing behind. He wears his same tan corduroy jacket over a maroon t-shirt, head tilted back mid-laugh, joyful wide anime smile, windblown hair, sparkling atmosphere.",
-      "motion_prompt": "He laughs joyfully with anime sparkle effects around him, head tilting back, hair ruffled by the breeze, mist drifting through glowing green trees, leaves fluttering past the camera. Warm happy slice-of-life anime energy. Face and clothing unchanged."
+      "motion_prompt": "Energetic anime motion: the camera cranes upward and pushes in from a low angle as he laughs, mist drifting, leaves and light particles floating past the lens, trees swaying overhead. Lively dynamic camerawork. Same face and clothing, no morphing.",
+      "reangle_prompt": "Full 2D anime redraw. Same young man's face and the same tan corduroy jacket over a maroon t-shirt as the reference photo. DYNAMIC LOW-ANGLE three-quarter shot looking UP at him from below as he laughs with his head tilted back, on a lush green misty mountain trail with tall trees towering overhead, fog and sunbeams. Cinematic anime, wide framing showing his upper body and the towering trees — NOT a head-on close-up."
     },
     {
       "id": "06",
       "act": "II-hills",
       "source": "source/b.jpeg",
-      "duration": 3,
+      "duration": 4,
       "narration": "…some said everything without saying much.",
       "narration_ja": "多くを語らず、すべてを伝えるやつもいた。",
       "still_prompt": "WIDE minimalist anime art shot: a lone small figure standing at the right side against an enormous fog-white lake and pale luminous sky that fill almost the entire frame as negative space, distant misty shoreline. He wears his same white knit zip-collar sweater with red stripe, tousled dark hair, calm quiet expression, subtle floating mist particles, contemplative art-film composition.",
@@ -71,7 +72,8 @@
       "narration": "Some nights, the city belonged to us.",
       "narration_ja": "夜になれば、この街は僕らのものだった。",
       "still_prompt": "Keep his night street-market setting as a glowing neon anime night: warm lantern light, buzzing neon shop signs, market stalls and trees glowing behind him, deep blue night sky. He wears his same brown t-shirt with the orange mushroom 'Everything Connected' print and black backpack strap, holding an open water bottle, perfectly deadpan expression looking straight at camera.",
-      "motion_prompt": "He keeps a completely deadpan anime stare at the camera, blinks slowly once, then calmly raises the water bottle and takes an unbothered sip while neon signs flicker and the market glows behind him. Dry comedic anime timing, an anime sweat-drop of stillness, minimal movement."
+      "motion_prompt": "Slow cinematic tracking dolly moving past him through the neon market with strong parallax on the signs and lanterns; he keeps a deadpan stare then takes one unbothered sip. Neon flicker, drifting crowds. Dynamic camera, same face and clothing.",
+      "reangle_prompt": "Full 2D anime redraw. Same man's face and the same brown t-shirt with the orange mushroom 'Everything Connected' print and black backpack strap as the reference photo. WIDE OVER-THE-SHOULDER shot from behind and to the side — he is smaller in frame standing amid a glowing neon night street market: lanterns, neon signs, stalls, blurred crowds and warm bokeh filling the environment. Deadpan expression, holding a water bottle. Cinematic depth, lots of environment — NOT a head-on close-up."
     },
     {
       "id": "08",
@@ -80,7 +82,8 @@
       "duration": 2,
       "narration": null,
       "still_prompt": "Keep his night party setting as anime: dark background with warm bokeh party lights. He wears his same beige shirt, leaning in close to the camera with a cheeky grin, raising a peace sign next to his face, camera-flash vignette, manga-panel energy.",
-      "motion_prompt": "Quick playful anime beat: he winks and flashes a peace sign at the camera with a tiny star glint effect, party light bokeh twinkling, slight handheld snapshot shake. Fun, punchy, brief."
+      "motion_prompt": "Quick punchy anime beat: fast snap-zoom and slight handheld shake on a dutch tilt, he winks and throws a peace sign with a bright star-glint effect, party bokeh twinkling. Brief and kinetic. Same face and shirt.",
+      "reangle_prompt": "Full 2D anime redraw. Same man's face and the same beige shirt as the reference photo. DUTCH-ANGLE tilted close-medium shot, he leans toward the lens with a cheeky grin flashing a peace sign, dark party background with colorful bokeh lights. Energetic tilted snapshot composition."
     },
     {
       "id": "09",
@@ -99,7 +102,8 @@
       "duration": 5,
       "narration": null,
       "still_prompt": "Place her in a warm lamplit anime palace corridor with carved wooden pillars and a grand old doorway at dusk, floating dust motes glowing in lamplight. She wears her exact same red silk saree with gold border over a gold blouse, gold waist belt, maang tikka, nose ring, jhumka earrings and bangles, long dark hair, serene smile glancing to the side, elegant shoujo-anime framing.",
-      "motion_prompt": "She turns gracefully toward the camera with a serene smile as soft petals drift through the lamplit corridor, the red saree drape and her long hair swaying gently, warm light flickering along the carved pillars. Elegant, slow, regal shoujo-anime motion with sparkle accents. Saree and jewelry unchanged."
+      "motion_prompt": "Elegant slow reveal: the camera cranes down and dollies in as she turns gracefully toward the lens, the full saree and pallu swaying, petals drifting through the lamplit corridor, warm light flickering. Graceful dynamic camera. Same face, saree and jewelry.",
+      "reangle_prompt": "Full 2D anime redraw. Same woman's face and the exact same red silk saree with gold border, gold blouse, gold jewelry, maang tikka and jhumka earrings as the reference photo. WIDE FULL-BODY elegant shot showing her HEAD TO TOE standing in a grand warm lamplit palace corridor with carved pillars, the saree drape flowing, glowing lanterns and floating petals. Regal shoujo-anime composition with depth — NOT a close-up."
     },
     {
       "id": "11",
@@ -109,7 +113,8 @@
       "narration": "…and every small sweet thing.",
       "narration_ja": "小さくて甘い、そんな瞬間も。",
       "still_prompt": "Place her in a cozy warm anime cafe interior with soft golden window light and pastel details. She wears her exact same navy-blue dress with white floral print, translucent glasses, silver necklace and earrings, leaning toward a small dessert cup with a pink striped candle in it, delighted open smile, hands raised mid-clap, sparkles in the air.",
-      "motion_prompt": "She leans in delighted toward the dessert, the little candle flame flickers warmly, she claps happily as tiny anime sparkles and hearts drift in the cozy cafe air, steam curling from a cup nearby. Sweet slice-of-life anime warmth. Face, glasses and dress unchanged."
+      "motion_prompt": "The camera starts high over the dessert then tilts up and pushes toward her delighted face; the candle flame flickers, she claps happily, sparkles and warm light drift. Dynamic tilt-up move. Same face, glasses and dress.",
+      "reangle_prompt": "Full 2D anime redraw. Same woman's face, translucent glasses and the same navy-blue dress with white floral print as the reference photo. HIGH-ANGLE shot looking DOWN over a cozy cafe table at her and a dessert cup with a pink striped candle, her looking up delighted, warm window light, pastel cafe. Overhead cinematic composition."
     },
     {
       "id": "12",
@@ -119,7 +124,8 @@
       "narration": "But mostly, it was the ordinary days.",
       "narration_ja": "でも、ほとんどは何気ない日々だった。",
       "still_prompt": "Keep his college setting as bright anime: sunlit campus courtyard with a colorful fest poster banner behind him, clean cel-shaded architecture. He wears his same olive-green polo shirt and tiny ear stud, head tilted, huge warm grin at the camera, youthful school-anime energy.",
-      "motion_prompt": "His grin widens into a real laugh, head tilting playfully, the fest banner fluttering behind him, bright daylight with anime lens sparkle. Cheerful school-anime energy. Face and clothing unchanged."
+      "motion_prompt": "Playful quick dolly-in and slight arc as his grin breaks into a real laugh, the fest banner fluttering behind, bright daylight with lens sparkle. Lively camera move. Same face and polo.",
+      "reangle_prompt": "Full 2D anime redraw. Same young man's face and the same olive-green polo shirt as the reference photo. MEDIUM THREE-QUARTER shot showing him and more of the bright sunlit college courtyard with a colorful fest banner behind, clean cel-shaded architecture, depth. NOT a tight close-up."
     },
     {
       "id": "13",
@@ -128,7 +134,8 @@
       "duration": 3,
       "narration": null,
       "still_prompt": "Keep her candid setting as soft anime: outdoor court with green chain-link fence behind, dappled light. She wears her same white sleeveless top, red backpack straps, blue flower-shaped silver earring, hair in a bun, looking up toward the camera with big expressive calm anime eyes.",
-      "motion_prompt": "She glances up at the camera and slowly breaks into a soft genuine smile, loose strands of hair moving in the breeze, dappled light and tiny light particles shifting across the frame. Candid, gentle anime moment. Face and earring unchanged."
+      "motion_prompt": "Slow arc with a rack-focus: the camera arcs from behind her shoulder as she glances up and breaks into a soft smile, background blurring then sharpening, dappled light and light particles. Dynamic focus pull. Same face and earring.",
+      "reangle_prompt": "Full 2D anime redraw. Same young woman's face, hair in a bun, blue flower-shaped earring, white sleeveless top and red backpack straps as the reference photo. OVER-THE-SHOULDER side three-quarter shot showing more of the outdoor court and green chain-link fence environment, shallow depth of field. Candid cinematic framing — NOT head-on."
     },
     {
       "id": "14",
@@ -137,17 +144,19 @@
       "duration": 4,
       "narration": null,
       "still_prompt": "Keep her outdoor garden-street setting as anime with trees and railing behind. She wears her same short cream-colored shirt with red-and-black Japanese characters printed on the sleeve, long dark hair, gold ring, playful determined shonen-anime look, fist raised toward the camera, subtle action aura.",
-      "motion_prompt": "She throws a playful punch toward the camera with bold anime speed-lines and a comic impact flash frame, then bursts out laughing, hair swinging. Full shonen-anime action-comedy energy. Face and the cream shirt with Japanese characters on the sleeve unchanged."
+      "motion_prompt": "Fast kinetic anime action: rapid dolly-in as her fist drives toward the lens with sharp speed-lines and a comic impact flash frame, then she bursts out laughing, hair swinging. Very dynamic punchy camera. Same face and cream shirt with Japanese sleeve text.",
+      "reangle_prompt": "Full 2D anime redraw. Same young woman's face, long dark hair and the same short cream-colored shirt with red-and-black Japanese characters on the sleeve as the reference photo. DYNAMIC LOW-ANGLE ACTION shot, her fist thrust toward the lens in strong foreshortening with bold anime speed-lines and an impact aura, determined playful expression, outdoor garden street. Shonen action composition."
     },
     {
       "id": "15",
       "act": "II-ordinary",
       "source": "source/l.jpeg",
-      "duration": 3,
+      "duration": 4,
       "narration": "The people who made a city a home.",
       "narration_ja": "この街を『家』にしてくれた人たち。",
       "still_prompt": "Tender anime portrait, keep her exact face and likeness: a young woman with long straight dark hair over her shoulders, small dangling earrings, warm bright genuine smile, round soft face — match the reference face closely. She is wearing an elegant SAREE (draped pallu over one shoulder, matching blouse), warm festive colors. Soft marble-textured wall behind with a warm backlight halo, glowing soft light and drifting light particles, framed chest-up. Emotional-climax warmth.",
-      "motion_prompt": "Her hair sways softly, her smile deepens warmly, golden anime light blooms gently across the frame with floating light particles. Minimal, tender emotional-climax motion. Face unchanged."
+      "motion_prompt": "Gentle emotional motion: the camera slowly arcs to her front as she turns from profile to face the lens, her warm smile deepening, hair swaying, golden light blooming and light particles drifting. Tender graceful camera. Same face and saree.",
+      "reangle_prompt": "Full 2D anime redraw. Same young woman's face and likeness as the reference photo, wearing an elegant warm-colored saree draped over one shoulder with matching blouse and small earrings. SOFT PROFILE side view with her beginning to turn toward the camera, tender warm backlight halo, slightly wider than a close-up showing her shoulders, drifting light particles. Emotional-climax composition."
     },
     {
       "id": "16",
@@ -203,11 +212,12 @@
   ],
   "music": {
     "model": "fal-ai/ace-step",
-    "duration": 95,
-    "tags": "anime ending theme, emotional j-pop ballad, soft warm female vocal, piano, strings, gentle drums, bittersweet, hopeful, cinematic, clean modern production",
+    "duration": 92,
+    "tags": "emotional anime film score, cinematic instrumental, solo piano melody, warm lush strings, soft ambient pad, gentle swelling build to an emotional climax, bittersweet and hopeful, Makoto Shinkai style OST, no vocals, no lyrics",
     "model_short": "fal-ai/minimax-music/v1.5",
     "style_prompt": "Emotional Japanese anime ending theme, J-pop ballad, soft warm female vocals, gentle piano and strings intro that builds into a heartfelt full-band final chorus, bittersweet but hopeful, clean modern anime-OST production, around 90 seconds.",
-    "lyrics": "[Verse]\nRain on the window, the old streets are glowing\nChai in the evening, the auto horns blowing\nTwenty-one summers, every road knows my name\nPacking a lifetime on a paper plane\n\n[Chorus]\nBut you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home\n\n[Verse]\nNew city lights on a marine drive evening\nSame old laughter in the calls I'm keeping\n\n[Chorus]\nOh you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home"
+    "lyrics": "[inst]",
+    "instrumental": true
   },
   "voiceover": {
     "model": "fal-ai/minimax/speech-02-hd",

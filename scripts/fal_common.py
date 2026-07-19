@@ -35,6 +35,7 @@ BUDGET_NOTIFY_AT = float(os.environ.get("FAL_BUDGET_NOTIFY", "13.0"))
 # these are conservative estimates used only to enforce the local cap.
 COST_TABLE = {
     "fal-ai/flux-pro/kontext": 0.04,
+    "fal-ai/nano-banana/edit": 0.05,
     "fal-ai/flux/dev": 0.025,
     "fal-ai/kling-video/v2.5-turbo/pro/image-to-video": 0.35,
     "fal-ai/wan/v2.2-a14b": 0.15,

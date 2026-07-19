@@ -22,6 +22,20 @@ from fal_common import (ROOT, STILLS, ensure_dirs, find_image_url, fingerprint, 
 
 KONTEXT_MODEL = "fal-ai/flux-pro/kontext"
 T2I_MODEL = "fal-ai/flux/dev"
+REANGLE_MODEL = "fal-ai/nano-banana/edit"  # Gemini edit: same person, NEW angle/pose
+
+# For --reangle: use the ORIGINAL photo purely as an identity/costume reference and
+# compose a genuinely new camera angle (not a tracing of the source framing).
+REANGLE_STYLE = (
+    "Redraw ENTIRELY as a flat 2D hand-drawn Japanese ANIME screenshot — bold black "
+    "outlines, flat cel shading with hard shadow shapes, simplified painted anime "
+    "background, expressive large anime eyes, that classic anime-movie look. This must "
+    "look UNMISTAKABLY like a 2D anime frame — NOT photorealistic, NOT a 3D render, NOT "
+    "realistic lighting or realistic skin. Use the reference image ONLY for the person's "
+    "identity (same face, hair, skin tone) and their exact outfit/costume. Do NOT copy "
+    "the photo's framing — compose the NEW camera angle and scene described here. Same "
+    "single person, same clothes. Cinematic 16:9. "
+)
 
 # Prepended to every photo shot's still_prompt. Hard anime, zero realism.
 ANIME_STYLE = (
@@ -44,6 +58,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*", help="shot ids to (re)generate")
     ap.add_argument("--force", action="store_true", help="ignore cache for selected shots")
+    ap.add_argument("--reangle", action="store_true",
+                    help="for shots with a reangle_prompt: recompose a NEW camera angle "
+                         "from the original photo (nano-banana), not a tracing of it")
     args = ap.parse_args()
 
     require_key()
@@ -58,7 +75,24 @@ def main():
             continue
         out = STILLS / f"{sid}.jpg"
 
-        if shot.get("source"):
+        if args.reangle and shot.get("reangle_prompt") and shot.get("source"):
+            # Recompose a new camera angle using the original photo as identity ref.
+            prompt = REANGLE_STYLE + shot["reangle_prompt"]
+            image_url = upload_cached(ROOT / shot["source"])
+
+            def fn(prompt=prompt, image_url=image_url):
+                res = fal_client.subscribe(REANGLE_MODEL, arguments={
+                    "prompt": prompt,
+                    "image_urls": [image_url],
+                    "aspect_ratio": "16:9",
+                    "num_images": 1,
+                    "output_format": "jpeg",
+                })
+                return find_image_url(res)
+
+            fp = fingerprint(REANGLE_MODEL, prompt, shot["source"])
+            model_used = REANGLE_MODEL
+        elif shot.get("source"):
             prompt = ANIME_STYLE + shot["still_prompt"]
             image_url = upload_cached(ROOT / shot["source"])
 

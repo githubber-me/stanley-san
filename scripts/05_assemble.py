@@ -54,6 +54,15 @@ def run(cmd):
     subprocess.run([str(c) for c in cmd], check=True)
 
 
+def probe_dur(path):
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                          "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    try:
+        return float(out.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
 def textfile(name, content):
     p = NORM / name
     p.write_text(content, encoding="utf-8")
@@ -139,11 +148,18 @@ def main():
 
     vo_items = []  # (offset_seconds, path)
     if not args.no_vo:
-        t = 0.0
+        # Schedule each line SEQUENTIALLY: never start a line before the previous one
+        # ends (+0.3s gap), so no two VO lines ever overlap. Anchor to the shot start
+        # when there's room.
+        t, prev_end = 0.0, 0.0
         for s in shots:
+            start = t
             p = AUDIO / f"vo_{s['id']}.mp3"
             if s.get("narration_ja") and p.exists():
-                vo_items.append((t + 0.25, p))
+                vlen = probe_dur(p)
+                off = max(start + 0.25, prev_end + 0.30)
+                vo_items.append((off, p))
+                prev_end = off + vlen
             elif s.get("narration_ja"):
                 print(f"  [warn] no VO file for shot {s['id']} ({p.name}) — skipping line")
             t += float(s["duration"])
