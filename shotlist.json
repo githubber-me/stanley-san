@@ -1,0 +1,213 @@
+{
+  "film": {
+    "title": "Stanley-san: Never Away From Home",
+    "resolution": "1920x1080",
+    "fps": 24
+  },
+  "shots": [
+    {
+      "id": "01",
+      "act": "I",
+      "source": null,
+      "duration": 4,
+      "narration": "Today, I leave Bengaluru.",
+      "narration_ja": "今日、僕はベンガルールを発つ。",
+      "still_prompt": "Anime film establishing shot of Bengaluru, India at dawn in light drizzle: a quiet residential street with a packed suitcase waiting by an apartment door in the foreground, wet asphalt reflecting amber traffic lights, distant glass towers and old rain trees, soft grey-gold morning sky with dramatic clouds. Beautiful painted anime background art, glowing light bloom, cel-shaded 2D anime movie frame, no people, no text.",
+      "motion_prompt": "Gentle anime rain falling in visible streaks, reflections shimmering on the wet road, light rays breaking through clouds, slow cinematic camera push-in toward the suitcase. No people appear. Calm, quiet anime-film morning mood."
+    },
+    {
+      "id": "02",
+      "act": "I",
+      "source": "source/stanley.jpeg",
+      "duration": 5,
+      "narration": "Twenty-one years. One city. And everything in it.",
+      "narration_ja": "21年。ひとつの街。その、すべて。",
+      "still_prompt": "Place him in a window seat of a commercial airplane parked at the gate, soft god-rays of morning light through the window, Bengaluru airport and hazy anime city skyline visible past the glass. He wears his same black t-shirt and glasses, pensive half-smile, head turned slightly toward the window, wistful anime protagonist framing.",
+      "motion_prompt": "He gazes out of the airplane window with a pensive half-smile, blinks slowly, anime light rays and dust motes drift through the cabin, soft reflections slide across the glass. Very slow cinematic camera drift. His face, glasses and clothing stay exactly the same."
+    },
+    {
+      "id": "03",
+      "act": "I",
+      "source": null,
+      "duration": 3,
+      "narration": null,
+      "still_prompt": "Anime shot through an airplane window during takeoff climb: Bengaluru city shrinking below, patchwork of rooftops, green trees and lakes, wing edge visible, brilliant white clouds rushing closer, luminous morning sky with lens-flare sparkle. Gorgeous painted 2D anime, dramatic perspective, no people, no text.",
+      "motion_prompt": "The city falls away below as the plane climbs steeply, anime speed-lines in the air, clouds sweep past the window and flood the frame with radiant white light. Smooth dreamlike anime motion, brightening to pure white at the end."
+    },
+    {
+      "id": "04",
+      "act": "II-hills",
+      "source": "source/c.jpeg",
+      "duration": 5,
+      "narration": "Some days we chased the fog up a mountain…",
+      "narration_ja": "霧を追いかけて、山を登った日もあった…",
+      "still_prompt": "Keep his misty hilltop setting redrawn as epic anime: he stands at a foggy mountain overlook like the protagonist of a shonen opening, wild windblown curly hair, black browline glasses, maroon windbreaker with drawstrings, swirling painted fog and glowing green hills behind, dramatic rim light.",
+      "motion_prompt": "Dramatic anime wind billows his curly hair and maroon windbreaker with visible wind streaks, fog swirls cinematically behind him, he holds a steady protagonist gaze then breaks into a confident smirk as light flares behind him. Slow heroic camera drift. Face, glasses and clothing unchanged."
+    },
+    {
+      "id": "05",
+      "act": "II-hills",
+      "source": "source/a.jpeg",
+      "duration": 4,
+      "narration": null,
+      "still_prompt": "Keep his green misty hill-trail setting as a lush painted anime landscape: monsoon foliage in vivid greens, fog rolling over the trail, old blue railing behind. He wears his same tan corduroy jacket over a maroon t-shirt, head tilted back mid-laugh, joyful wide anime smile, windblown hair, sparkling atmosphere.",
+      "motion_prompt": "He laughs joyfully with anime sparkle effects around him, head tilting back, hair ruffled by the breeze, mist drifting through glowing green trees, leaves fluttering past the camera. Warm happy slice-of-life anime energy. Face and clothing unchanged."
+    },
+    {
+      "id": "06",
+      "act": "II-hills",
+      "source": "source/b.jpeg",
+      "duration": 3,
+      "narration": "…some said everything without saying much.",
+      "narration_ja": "多くを語らず、すべてを伝えるやつもいた。",
+      "still_prompt": "Keep his foggy white lakeside setting as minimalist anime art: vast pale luminous mist filling most of the frame like negative space, he stands at the right side in his same white knit zip-collar sweater with red stripe, tousled dark hair, calm serious anime gaze at the camera, subtle floating mist particles.",
+      "motion_prompt": "He holds a quiet steady gaze, then gives the faintest nod and hint of a smile, luminous mist slowly swirling across the vast white background, hair moving slightly. Minimal, contemplative art-film anime motion."
+    },
+    {
+      "id": "07",
+      "act": "II-nights",
+      "source": "source/e.jpeg",
+      "duration": 5,
+      "narration": "Some nights, the city belonged to us.",
+      "narration_ja": "夜になれば、この街は僕らのものだった。",
+      "still_prompt": "Keep his night street-market setting as a glowing neon anime night: warm lantern light, buzzing neon shop signs, market stalls and trees glowing behind him, deep blue night sky. He wears his same brown t-shirt with the orange mushroom 'Everything Connected' print and black backpack strap, holding an open water bottle, perfectly deadpan expression looking straight at camera.",
+      "motion_prompt": "He keeps a completely deadpan anime stare at the camera, blinks slowly once, then calmly raises the water bottle and takes an unbothered sip while neon signs flicker and the market glows behind him. Dry comedic anime timing, an anime sweat-drop of stillness, minimal movement."
+    },
+    {
+      "id": "08",
+      "act": "II-nights",
+      "source": "source/j.jpeg",
+      "duration": 2,
+      "narration": null,
+      "still_prompt": "Keep his night party setting as anime: dark background with warm bokeh party lights. He wears his same beige shirt, leaning in close to the camera with a cheeky grin, raising a peace sign next to his face, camera-flash vignette, manga-panel energy.",
+      "motion_prompt": "Quick playful anime beat: he winks and flashes a peace sign at the camera with a tiny star glint effect, party light bokeh twinkling, slight handheld snapshot shake. Fun, punchy, brief."
+    },
+    {
+      "id": "09",
+      "act": "II-grand",
+      "source": "source/d.jpeg",
+      "duration": 5,
+      "narration": "Some days, we dressed up like the main characters…",
+      "narration_ja": "主人公みたいに着飾った日もあった…",
+      "still_prompt": "Place him on an open grassy hilltop at golden hour with a dramatic glowing anime sky and god rays. He wears his exact same traditional yellow dhoti and shawl with orange border, white and red flower garlands, round glasses, moustache, pink ornament on his forehead, holding the same leafy branch wrapped in yellow cloth like a legendary staff, gentle proud smile, epic fantasy-anime hero framing.",
+      "motion_prompt": "Epic anime hero shot: golden-hour wind makes his yellow robes and flower garlands flutter dramatically, he slowly raises the leafy branch like a legendary staff as glowing leaves and petals swirl around him in spirals, light flares behind him. Slow heroic camera push-in. Costume, garlands and glasses unchanged."
+    },
+    {
+      "id": "10",
+      "act": "II-grand",
+      "source": "source/f.jpeg",
+      "duration": 5,
+      "narration": null,
+      "still_prompt": "Place her in a warm lamplit anime palace corridor with carved wooden pillars and a grand old doorway at dusk, floating dust motes glowing in lamplight. She wears her exact same red silk saree with gold border over a gold blouse, gold waist belt, maang tikka, nose ring, jhumka earrings and bangles, long dark hair, serene smile glancing to the side, elegant shoujo-anime framing.",
+      "motion_prompt": "She turns gracefully toward the camera with a serene smile as soft petals drift through the lamplit corridor, the red saree drape and her long hair swaying gently, warm light flickering along the carved pillars. Elegant, slow, regal shoujo-anime motion with sparkle accents. Saree and jewelry unchanged."
+    },
+    {
+      "id": "11",
+      "act": "II-grand",
+      "source": "source/g.jpeg",
+      "duration": 4,
+      "narration": "…and every small sweet thing.",
+      "narration_ja": "小さくて甘い、そんな瞬間も。",
+      "still_prompt": "Place her in a cozy warm anime cafe interior with soft golden window light and pastel details. She wears her exact same navy-blue dress with white floral print, translucent glasses, silver necklace and earrings, leaning toward a small dessert cup with a pink striped candle in it, delighted open smile, hands raised mid-clap, sparkles in the air.",
+      "motion_prompt": "She leans in delighted toward the dessert, the little candle flame flickers warmly, she claps happily as tiny anime sparkles and hearts drift in the cozy cafe air, steam curling from a cup nearby. Sweet slice-of-life anime warmth. Face, glasses and dress unchanged."
+    },
+    {
+      "id": "12",
+      "act": "II-ordinary",
+      "source": "source/i.jpeg",
+      "duration": 3,
+      "narration": "But mostly, it was the ordinary days.",
+      "narration_ja": "でも、ほとんどは何気ない日々だった。",
+      "still_prompt": "Keep his college setting as bright anime: sunlit campus courtyard with a colorful fest poster banner behind him, clean cel-shaded architecture. He wears his same olive-green polo shirt and tiny ear stud, head tilted, huge warm grin at the camera, youthful school-anime energy.",
+      "motion_prompt": "His grin widens into a real laugh, head tilting playfully, the fest banner fluttering behind him, bright daylight with anime lens sparkle. Cheerful school-anime energy. Face and clothing unchanged."
+    },
+    {
+      "id": "13",
+      "act": "II-ordinary",
+      "source": "source/h.jpeg",
+      "duration": 3,
+      "narration": null,
+      "still_prompt": "Keep her candid setting as soft anime: outdoor court with green chain-link fence behind, dappled light. She wears her same white sleeveless top, red backpack straps, blue flower-shaped silver earring, hair in a bun, looking up toward the camera with big expressive calm anime eyes.",
+      "motion_prompt": "She glances up at the camera and slowly breaks into a soft genuine smile, loose strands of hair moving in the breeze, dappled light and tiny light particles shifting across the frame. Candid, gentle anime moment. Face and earring unchanged."
+    },
+    {
+      "id": "14",
+      "act": "II-ordinary",
+      "source": "source/k.jpeg",
+      "duration": 4,
+      "narration": null,
+      "still_prompt": "Keep her outdoor garden-street setting as anime with trees and railing behind. She wears her same short cream-colored shirt with red-and-black Japanese characters printed on the sleeve, long dark hair, gold ring, playful determined shonen-anime look, fist raised toward the camera, subtle action aura.",
+      "motion_prompt": "She throws a playful punch toward the camera with bold anime speed-lines and a comic impact flash frame, then bursts out laughing, hair swinging. Full shonen-anime action-comedy energy. Face and the cream shirt with Japanese characters on the sleeve unchanged."
+    },
+    {
+      "id": "15",
+      "act": "II-ordinary",
+      "source": "source/l.jpeg",
+      "duration": 3,
+      "narration": "The people who made a city a home.",
+      "narration_ja": "この街を『家』にしてくれた人たち。",
+      "still_prompt": "Keep her simple portrait setting with a soft marble-textured wall behind, redrawn as a tender anime portrait with warm backlight halo. She has long dark hair over her shoulders, small earrings, and her same warm bright smile, framed chest-up, glowing soft light and drifting light particles.",
+      "motion_prompt": "Her hair sways softly, her smile deepens warmly, golden anime light blooms gently across the frame with floating light particles. Minimal, tender emotional-climax motion. Face unchanged."
+    },
+    {
+      "id": "16",
+      "act": "III",
+      "source": null,
+      "duration": 4,
+      "narration": null,
+      "still_prompt": "Anime aerial shot from beside an airplane wing banking over the Arabian Sea at golden dusk: Mumbai's coastline curving below, Marine Drive's necklace of lights beginning to glow, sea glittering with painted highlights, warm hazy sky with dramatic anime clouds. Gorgeous cel-shaded 2D anime, cinematic, no people, no text.",
+      "motion_prompt": "The plane banks gently, the wing tilting as Mumbai's glittering coastline slides into view below, sea shimmering with animated sparkle, city lights flickering on at dusk. Smooth sweeping anime aerial motion."
+    },
+    {
+      "id": "17",
+      "act": "III",
+      "source": "source/stanley.jpeg",
+      "duration": 5,
+      "narration": "A new city. New streets. No familiar faces…",
+      "narration_ja": "新しい街。知らない道。知った顔は、ない…",
+      "still_prompt": "Place him standing at the Marine Drive seaside promenade in Mumbai at dusk, painted anime sea and the curving necklace of street lights behind him, warm city glow against a deep blue evening sky with stars appearing. He wears his same black t-shirt and glasses, hands relaxed, quiet thoughtful expression looking toward the sea, lonely-beautiful anime framing.",
+      "motion_prompt": "Sea breeze moves his hair, he gazes out at the water thoughtfully, painted waves rolling softly, street lights along Marine Drive twinkling on one by one behind him, a distant train of lights. Slow, wistful anime camera drift. Face, glasses and black t-shirt unchanged."
+    },
+    {
+      "id": "18",
+      "act": "III",
+      "source": "source/group.jpeg",
+      "duration": 5,
+      "narration": "…and yet.",
+      "narration_ja": "それでも。",
+      "still_prompt": "Redraw the living-room group selfie as a warm anime ensemble scene: all thirteen friends crowded together on the sofa and floor of a cozy lamplit apartment room, every person kept with the same face, position, pose and clothing as the photo, warm golden anime lamp light, joyful natural smiles, cozy found-family anime warmth.",
+      "motion_prompt": "The group photo comes alive: subtle natural motion, friends laughing and leaning into each other, warm lamp light glowing with soft bloom, camera very slowly pulling back. Every single person keeps the same face, position and clothing. No one appears or disappears."
+    },
+    {
+      "id": "19",
+      "act": "III",
+      "source": "source/group.jpeg",
+      "still_from": "18",
+      "duration": 5,
+      "narration": "Some things don't change with the pin code.",
+      "narration_ja": "住所が変わっても、変わらないものがある。",
+      "motion_prompt": "Gentle continuation: soft laughter ripples through the group, someone leans on a friend's shoulder, warm golden light slowly blooming brighter across the cozy room with drifting light particles. Camera drifts slowly. Every person keeps the same face, position and clothing."
+    },
+    {
+      "id": "20",
+      "act": "III",
+      "source": null,
+      "duration": 5,
+      "narration": null,
+      "narration_ja": "どこにいても、家はここにある。",
+      "title_main": "You're never away from home.",
+      "title_sub": "Bengaluru → Mumbai · Stanley-san, ganbatte!",
+      "still_prompt": "Anime end-card background: a wide twilight sky in warm sunset gradient over a calm painted sea, tiny silhouettes of two distant city skylines on the left and right horizons connected by a faint glowing trail of light from a passing plane, soft luminous clouds, drifting sakura petals, gentle film grain. Serene cel-shaded 2D anime, cinematic, no people, NO text anywhere.",
+      "motion_prompt": "Clouds drift very slowly across the twilight sky, the faint plane light trail twinkles, sakura petals float across the frame, sea shimmering softly. Extremely calm, minimal anime end-card motion. No text, no people."
+    }
+  ],
+  "music": {
+    "model": "fal-ai/minimax-music/v1.5",
+    "style_prompt": "Emotional Japanese anime ending theme, J-pop ballad, soft warm female vocals, gentle piano and strings intro that builds into a heartfelt full-band final chorus, bittersweet but hopeful, clean modern anime-OST production, around 90 seconds.",
+    "lyrics": "[Verse]\nRain on the window, the old streets are glowing\nChai in the evening, the auto horns blowing\nTwenty-one summers, every road knows my name\nPacking a lifetime on a paper plane\n\n[Chorus]\nBut you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home\n\n[Verse]\nNew city lights on a marine drive evening\nSame old laughter in the calls I'm keeping\n\n[Chorus]\nOh you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home"
+  },
+  "voiceover": {
+    "model": "fal-ai/minimax/speech-02-hd",
+    "note": "Japanese inner-monologue VO, spoken over the music like an anime narration. English lines render as on-screen subtitles. Calm young male voice, slow, wistful."
+  }
+}
