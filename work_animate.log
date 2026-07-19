@@ -23,3 +23,41 @@
   [done]   clip:08 -> 08.mp4
   [spend]  $0.35  |  running total $4.00 / $14
   [run]    clip:09 ...
+  [done]   clip:09 -> 09.mp4
+  [spend]  $0.35  |  running total $4.90 / $14
+  [run]    clip:10 ...
+  [done]   clip:10 -> 10.mp4
+  [spend]  $0.35  |  running total $5.25 / $14
+  [run]    clip:11 ...
+  [done]   clip:11 -> 11.mp4
+  [spend]  $0.35  |  running total $5.60 / $14
+  [run]    clip:12 ...
+  [done]   clip:12 -> 12.mp4
+  [spend]  $0.35  |  running total $5.95 / $14
+  [run]    clip:13 ...
+  [done]   clip:13 -> 13.mp4
+  [spend]  $0.35  |  running total $6.30 / $14
+  [run]    clip:14 ...
+  [done]   clip:14 -> 14.mp4
+  [spend]  $0.35  |  running total $6.65 / $14
+  [run]    clip:15 ...
+  [done]   clip:15 -> 15.mp4
+  [spend]  $0.35  |  running total $7.00 / $14
+  [run]    clip:16 ...
+  [done]   clip:16 -> 16.mp4
+  [spend]  $0.35  |  running total $7.35 / $14
+  [run]    clip:17 ...
+  [done]   clip:17 -> 17.mp4
+  [spend]  $0.35  |  running total $7.70 / $14
+  [run]    clip:18 ...
+  [done]   clip:18 -> 18.mp4
+  [spend]  $0.35  |  running total $8.05 / $14
+  [run]    clip:19 ...
+  [done]   clip:19 -> 19.mp4
+  [spend]  $0.35  |  running total $8.40 / $14
+  [run]    clip:20 ...
+  [done]   clip:20 -> 20.mp4
+  [spend]  $0.35  |  running total $8.75 / $14
+
+All clips in work/clips/ — spot-check each one: no face morphing, no costume
+changes, no extra people (group shot must keep all 13).
