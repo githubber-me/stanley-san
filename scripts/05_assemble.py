@@ -37,6 +37,25 @@ FONT_BOLD_CANDIDATES = [
     "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
     "/System/Library/Fonts/Helvetica.ttc",
 ]
+# CJK font is required to render the Japanese subtitle line (Latin fonts show boxes).
+FONT_CJK_CANDIDATES = [
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc",
+    "/usr/share/fonts/truetype/noto/NotoSansCJKjp-Regular.otf",
+]
+
+SUB_SIZE = 30  # subtitle font size — same for JA and EN, smaller than before
+
+# Dreamy/nostalgic grade applied to the Act II flashback shots (soft haze, warm lift,
+# gentle vignette, film grain). Applied BEFORE subtitles so text stays crisp.
+DREAM_FILTERS = [
+    "gblur=sigma=2.4",
+    "eq=brightness=0.03:saturation=1.14:contrast=0.94",
+    "curves=all='0/0.05 0.5/0.53 1/0.97'",
+    "vignette=angle=PI/4.6",
+    "noise=alls=6:allf=t",
+]
 
 
 def pick_font(candidates, env_var):
@@ -69,15 +88,35 @@ def textfile(name, content):
     return p
 
 
-def sub_filter(font, txt_path, dur, fontsize=40, y="h-130"):
-    """Anime-style subtitle with a gentle fade in/out."""
-    alpha = f"if(lt(t\\,0.5)\\,t/0.5\\,if(gt(t\\,{dur - 0.8:.2f})\\,max(0\\,({dur:.2f}-t)/0.8)\\,1))"
-    return (f"drawtext=fontfile={font}:textfile={txt_path}:fontsize={fontsize}:"
+def _fade_alpha(dur):
+    return f"if(lt(t\\,0.5)\\,t/0.5\\,if(gt(t\\,{dur - 0.8:.2f})\\,max(0\\,({dur:.2f}-t)/0.8)\\,1))"
+
+
+def build_subs(shot, font, cjk_font, dur):
+    """Japanese subtitle line ABOVE the English one, same (small) size, gentle fade."""
+    sid = shot["id"]
+    alpha = _fade_alpha(dur)
+    filters = []
+    en, ja = shot.get("narration"), shot.get("narration_ja")
+    # English on the lower line.
+    if en:
+        p = textfile(f"{sid}_en.txt", en)
+        filters.append(
+            f"drawtext=fontfile={font}:textfile={p}:fontsize={SUB_SIZE}:"
+            f"fontcolor=white:borderw=2:bordercolor=black@0.75:"
+            f"x=(w-text_w)/2:y=h-80:alpha='{alpha}'")
+    # Japanese sits just above the English line (or bottom if no English).
+    if ja:
+        p = textfile(f"{sid}_ja.txt", ja)
+        y = "h-124" if en else "h-80"
+        filters.append(
+            f"drawtext=fontfile={cjk_font}:textfile={p}:fontsize={SUB_SIZE}:"
             f"fontcolor=white:borderw=2:bordercolor=black@0.75:"
             f"x=(w-text_w)/2:y={y}:alpha='{alpha}'")
+    return filters
 
 
-def normalize_shot(shot, font, font_bold):
+def normalize_shot(shot, font, font_bold, cjk_font):
     sid, dur = shot["id"], float(shot["duration"])
     src = CLIPS / f"{sid}.mp4"
     out = NORM / f"{sid}.mp4"
@@ -90,8 +129,12 @@ def normalize_shot(shot, font, font_bold):
         f"fps={FPS}",
         "setsar=1",
     ]
-    if shot.get("narration"):
-        vf.append(sub_filter(font, textfile(f"{sid}.txt", shot["narration"]), dur))
+    # Dreamy nostalgic grade on the Act II flashback/memory shots (before subtitles).
+    if str(shot.get("act", "")).startswith("II"):
+        vf.extend(DREAM_FILTERS)
+
+    # Japanese subtitle above English (both small, same size).
+    vf.extend(build_subs(shot, font, cjk_font, dur))
 
     if sid == "01":
         vf.append("fade=t=in:st=0:d=0.8")
@@ -129,9 +172,10 @@ def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
     font = pick_font(FONT_CANDIDATES, "FONT")
     font_bold = pick_font(FONT_BOLD_CANDIDATES, "FONT_BOLD")
+    cjk_font = pick_font(FONT_CJK_CANDIDATES, "FONT_CJK")
 
     # 1. Normalize + decorate every shot, then hard-cut concat.
-    norm_files = [normalize_shot(s, font, font_bold) for s in shots]
+    norm_files = [normalize_shot(s, font, font_bold, cjk_font) for s in shots]
     concat_list = NORM / "concat.txt"
     concat_list.write_text("".join(f"file '{p.resolve()}'\n" for p in norm_files))
     silent = NORM / "silent.mp4"
