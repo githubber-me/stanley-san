@@ -129,12 +129,11 @@ def normalize_shot(shot, font, font_bold, cjk_font):
         f"fps={FPS}",
         "setsar=1",
     ]
-    # Dreamy nostalgic grade on the Act II flashback/memory shots (before subtitles).
+    # Dreamy nostalgic grade on the Act II flashback/memory shots.
     if str(shot.get("act", "")).startswith("II"):
         vf.extend(DREAM_FILTERS)
-
-    # Japanese subtitle above English (both small, same size).
-    vf.extend(build_subs(shot, font, cjk_font, dur))
+    # NOTE: subtitles are NOT drawn here anymore — they're burned onto the final
+    # timeline (synced to the VO), so a line can span shot cuts.
 
     if sid == "01":
         vf.append("fade=t=in:st=0:d=0.8")
@@ -142,6 +141,10 @@ def normalize_shot(shot, font, font_bold, cjk_font):
         vf.append(f"fade=t=out:st={dur - 0.6:.2f}:d=0.6:color=white")
     if sid == "04":  # ...and back from white
         vf.append("fade=t=in:st=0:d=0.5:color=white")
+    if sid == "15":  # end of the memories — fade out to black
+        vf.append(f"fade=t=out:st={dur - 1.0:.2f}:d=1.0")
+    if sid == "16":  # back to the present (Mumbai) — fade in from black
+        vf.append("fade=t=in:st=0:d=1.0")
     if sid == "20":  # end title card
         main_txt = textfile("t20_main.txt", shot["title_main"])
         sub_txt = textfile("t20_sub.txt", shot["title_sub"])
@@ -161,9 +164,42 @@ def normalize_shot(shot, font, font_bold, cjk_font):
     return out
 
 
+def build_schedule(shots):
+    """One shared timeline for BOTH the VO audio and the subtitles, so they're locked
+    together. Each narrated line starts at its shot (>=+0.25s) but never before the
+    previous line ends (+0.3s), so lines never overlap — a line may run past its shot
+    cut, and the subtitle stays on screen with it. Returns list of dicts."""
+    sched, t, prev_end = [], 0.0, 0.0
+    for s in shots:
+        p = AUDIO / f"vo_{s['id']}.mp3"
+        if s.get("narration_ja") and p.exists():
+            vlen = probe_dur(p) or 2.5
+            off = max(t + 0.25, prev_end + 0.30)
+            end = off + vlen
+            sched.append({"id": s["id"], "off": off, "end": end, "vo": p,
+                          "en": s.get("narration"), "ja": s.get("narration_ja"),
+                          "endcard": bool(s.get("title_main"))})
+            prev_end = end
+        elif s.get("narration_ja"):
+            print(f"  [warn] no VO file for shot {s['id']} — line skipped")
+        t += float(s["duration"])
+    return sched
+
+
+def _dt_sub(fontfile, txtpath, y, off, end):
+    """A synced subtitle drawtext: shown between off..end with a 0.3s alpha fade."""
+    a = f"min(1\\,(t-{off:.2f})/0.3)*min(1\\,({end:.2f}-t)/0.3)"
+    return (f"drawtext=fontfile={fontfile}:textfile={txtpath}:fontsize={SUB_SIZE}:"
+            f"fontcolor=white:borderw=2:bordercolor=black@0.75:x=(w-text_w)/2:y={y}:"
+            f"enable='between(t\\,{off:.2f}\\,{end:.2f})':alpha='{a}'")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--song", default=str(AUDIO / "song_take1.mp3"))
+    ap.add_argument("--song", default="source/music.wav",
+                    help="soundtrack (default: the user-provided source/music.wav)")
+    ap.add_argument("--music-vol", type=float, default=0.5,
+                    help="music volume (0.5 = half of the raw track)")
     ap.add_argument("--no-vo", action="store_true", help="skip the Japanese voiceover mix")
     args = ap.parse_args()
 
@@ -174,7 +210,7 @@ def main():
     font_bold = pick_font(FONT_BOLD_CANDIDATES, "FONT_BOLD")
     cjk_font = pick_font(FONT_CJK_CANDIDATES, "FONT_CJK")
 
-    # 1. Normalize + decorate every shot, then hard-cut concat.
+    # 1. Normalize + decorate every shot (no subtitles), then hard-cut concat.
     norm_files = [normalize_shot(s, font, font_bold, cjk_font) for s in shots]
     concat_list = NORM / "concat.txt"
     concat_list.write_text("".join(f"file '{p.resolve()}'\n" for p in norm_files))
@@ -183,33 +219,39 @@ def main():
          "-c", "copy", silent])
 
     total = sum(float(s["duration"]) for s in shots)
+    sched = build_schedule(shots)
 
-    # 2. Audio: song + (optionally) Japanese VO lines placed at shot start times,
-    #    with the music ducked under the voice.
+    # 2. Burn subtitles on the FINAL timeline, synced to the VO windows (JA above EN,
+    #    both small/same size). Endcard shot keeps its own title, so skip its line.
+    sub_dts = []
+    for e in sched:
+        if e["endcard"]:
+            continue
+        end = min(e["end"], total)
+        if e["en"]:
+            sub_dts.append(_dt_sub(font, textfile(f"{e['id']}_en.txt", e["en"]),
+                                   "h-80", e["off"], end))
+        if e["ja"]:
+            y = "h-124" if e["en"] else "h-80"
+            sub_dts.append(_dt_sub(cjk_font, textfile(f"{e['id']}_ja.txt", e["ja"]),
+                                   y, e["off"], end))
+    subbed = NORM / "subbed.mp4"
+    if sub_dts:
+        run(["ffmpeg", "-y", "-i", silent, "-vf", ",".join(sub_dts), "-an",
+             "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+             "-pix_fmt", "yuv420p", subbed])
+    else:
+        subbed = silent
+
+    # 3. Audio: the user's music (at half volume, faded) + VO lines, music ducked under VO.
     song = Path(args.song)
     if not song.exists():
-        raise SystemExit(f"Song not found: {song} — run 03_music.py (or pass --song).")
+        raise SystemExit(f"Music not found: {song}")
 
-    vo_items = []  # (offset_seconds, path)
-    if not args.no_vo:
-        # Schedule each line SEQUENTIALLY: never start a line before the previous one
-        # ends (+0.3s gap), so no two VO lines ever overlap. Anchor to the shot start
-        # when there's room.
-        t, prev_end = 0.0, 0.0
-        for s in shots:
-            start = t
-            p = AUDIO / f"vo_{s['id']}.mp3"
-            if s.get("narration_ja") and p.exists():
-                vlen = probe_dur(p)
-                off = max(start + 0.25, prev_end + 0.30)
-                vo_items.append((off, p))
-                prev_end = off + vlen
-            elif s.get("narration_ja"):
-                print(f"  [warn] no VO file for shot {s['id']} ({p.name}) — skipping line")
-            t += float(s["duration"])
+    vo_items = [] if args.no_vo else [(e["off"], e["vo"]) for e in sched]
 
-    inputs = ["-i", silent, "-i", song] + [x for _, p in vo_items for x in ("-i", p)]
-    music = (f"[1:a]apad,atrim=0:{total:.3f},afade=t=in:st=0:d=1.0,"
+    inputs = ["-i", subbed, "-i", str(song)] + [x for _, p in vo_items for x in ("-i", str(p))]
+    music = (f"[1:a]atrim=0:{total:.3f},volume={args.music_vol},afade=t=in:st=0:d=1.5,"
              f"afade=t=out:st={total - 3:.3f}:d=3.0[mus]")
     if vo_items:
         chains, labels = [], []

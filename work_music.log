@@ -1,5 +1,0 @@
-  [run]    music:take1:vocal ...
-  [done]   music:take1:vocal -> song_take1.mp3
-  [spend]  $0.35  |  running total $4.35 / $14
-
-Listen to /home/user/stanley-san/work/audio/song_take1.mp3. Generate more takes with --take N, then pass the winner to 05_assemble.py --song <path>.

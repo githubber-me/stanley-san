@@ -20,7 +20,7 @@
       "act": "I",
       "source": "source/stanley.jpeg",
       "duration": 5,
-      "narration": "Twenty-one years. One city. Everything I am.",
+      "narration": "Twenty-one years. One city. Everything he is.",
       "narration_ja": "21年。ひとつの街。僕のすべて。",
       "still_prompt": "Place him in a window seat of a commercial airplane at the gate, soft cool morning light through the window, Bengaluru airport and hazy anime city skyline visible past the glass. He wears his glasses and a GREY HOODIE (grey hooded sweatshirt). He looks SAD and wistful — downcast melancholy eyes gazing out the window, lips pressed in a quiet frown, a faint reflection of the city on his glasses, heavy-hearted leaving-home mood. No smile. Medium close-up, wistful anime protagonist framing.",
       "motion_prompt": "He gazes out of the airplane window with a sad wistful expression, blinks slowly, anime light rays and dust motes drift through the cabin, soft reflections slide across the glass. Very slow cinematic camera drift. His face, glasses and grey hoodie stay exactly the same."
@@ -102,7 +102,7 @@
       "duration": 5,
       "narration": null,
       "still_prompt": "Place her in a warm lamplit anime palace corridor with carved wooden pillars and a grand old doorway at dusk, floating dust motes glowing in lamplight. She wears her exact same red silk saree with gold border over a gold blouse, gold waist belt, maang tikka, nose ring, jhumka earrings and bangles, long dark hair, serene smile glancing to the side, elegant shoujo-anime framing.",
-      "motion_prompt": "Playful anime beat: she points a finger-gun at the camera, winks, and 'fires' it toward the lens with a tiny spark/star muzzle-flash and a wisp of smoke curling from her fingertip, then grins; petals drift in warm lamplight. Fun cheeky motion. Same face and red saree.",
+      "motion_prompt": "Playful anime beat: she points a FINGER-GUN (just her hand, index finger out, thumb up) straight at the camera, winks, and playfully mimes shooting — a tiny recoil flick of her hand and a cheeky grin, mouthing 'pew'. NO real gun, NO smoke, NO muzzle flash, NO fire — only her fingers. Petals drift in warm lamplight. Fun and cute. Same face and red saree.",
       "reangle_prompt": "Full 2D anime redraw (flat cel shading, bold clean outlines, NOT photorealistic). Same woman's face and the exact same red silk saree with gold border, gold jewelry and bangles as the reference photo. She playfully makes a FINGER-GUN with her hand pointed straight at the camera, one eye winked, cheeky confident smile, standing in a warm lamplit palace corridor with carved pillars and floating petals. Medium shot, dynamic playful composition."
     },
     {
@@ -155,8 +155,8 @@
       "narration": "The people who made a city feel like home.",
       "narration_ja": "この街を、家にしてくれた人たち。",
       "still_prompt": "Tender anime portrait, keep her exact face and likeness: a young woman with long straight dark hair over her shoulders, small dangling earrings, warm bright genuine smile, round soft face — match the reference face closely. She is wearing an elegant SAREE (draped pallu over one shoulder, matching blouse), warm festive colors. Soft marble-textured wall behind with a warm backlight halo, glowing soft light and drifting light particles, framed chest-up. Emotional-climax warmth.",
-      "motion_prompt": "Gentle emotional motion: the camera slowly arcs as she turns toward the lens, warm smile deepening, hair swaying, gold bangles catching the light, golden bloom and light particles drifting. Tender graceful camera. Same face and cream-and-gold saree.",
-      "reangle_prompt": "Full 2D anime redraw (flat cel shading, bold clean outlines, NOT photorealistic). Keep her exact face and likeness from the reference: a young woman with long straight dark hair over her shoulders, warm gentle smile, small earrings. She wears an elegant CREAM-AND-GOLD saree with delicate gold floral embroidery, draped over one shoulder, and a stack of GOLD BANGLES on her wrist. SOFT three-quarter turn toward the camera, warm golden backlight halo, drifting light particles, tender emotional composition, slightly wider than a close-up so her hands and the gold bangles show."
+      "motion_prompt": "She warmly WAVES GOODBYE at the camera — hand raised, gentle side-to-side wave — with a soft affectionate farewell smile, hair swaying, gold bangles catching the light, golden sunset bloom and light particles drifting. Tender, slow. Same face and cream-and-gold saree.",
+      "reangle_prompt": "Full 2D anime redraw (flat cel shading, bold clean outlines, NOT photorealistic). Keep her exact face and likeness from the reference: a young woman with long straight dark hair, warm gentle smile, small earrings, wearing an elegant CREAM-AND-GOLD saree with gold floral embroidery and GOLD BANGLES. She raises one hand and WAVES GOODBYE toward the camera, warm affectionate farewell smile, standing in a warm golden temple-garden at sunset, drifting light particles, tender composition showing her raised waving hand."
     },
     {
       "id": "16",
@@ -184,8 +184,8 @@
       "duration": 5,
       "narration": "…and yet.",
       "narration_ja": "それでも。",
-      "still_prompt": "Anime shot at dusk on the Marine Drive seaside promenade: a smartphone resting on the stone railing (slightly angled toward us), its screen glowing warm and bright with a happy group selfie of many smiling friends and an incoming group video-call, soft notification glow; the sea and the necklace of city lights blurred in warm bokeh behind, deep blue evening sky. Cozy warm screen light against cool dusk. Cel-shaded 2D anime, cinematic, emotional, no readable text.",
-      "motion_prompt": "The phone screen glows and brightens as a group video-call comes in, gentle reflections and soft light bloom slide across the glass, the sea bokeh twinkles behind, faint steam of evening air. Warm, intimate, subtle motion. No readable text."
+      "still_prompt": "Anime DUSK shot of the real Bandra-Worli Sea Link in Mumbai — a modern WHITE cable-stayed bridge with tall white pylons and cables, stretching across the calm sea, Mumbai skyline in the warm hazy distance, golden-pink sunset sky reflecting on the water. Cel-shaded 2D anime background art, cinematic, no text.",
+      "motion_prompt": "Slow cinematic aerial drift over the white Bandra-Worli Sea Link at dusk, the pink-gold sunset sky glowing and slowly shifting, the calm sea shimmering with warm reflections, tiny car headlights moving along the bridge deck, distant city haze. Smooth, hopeful, gentle camera push. No text, no people."
     },
     {
       "id": "19",
@@ -217,7 +217,8 @@
     "model_short": "fal-ai/minimax-music/v1.5",
     "style_prompt": "Emotional Japanese anime ending theme, J-pop ballad, soft warm female vocals, gentle piano and strings intro that builds into a heartfelt full-band final chorus, bittersweet but hopeful, clean modern anime-OST production, around 90 seconds.",
     "lyrics": "[inst]",
-    "instrumental": true
+    "instrumental": true,
+    "final_track": "source/music.wav"
   },
   "voiceover": {
     "model": "fal-ai/minimax/speech-02-hd",
