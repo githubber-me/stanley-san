@@ -41,6 +41,7 @@ COST_TABLE = {
     "fal-ai/veo3/fast/image-to-video": 3.20,
     "fal-ai/minimax-music/v1.5": 0.35,
     "fal-ai/minimax-music": 0.35,
+    "fal-ai/ace-step": 0.20,
     "fal-ai/stable-audio": 0.05,
     "fal-ai/minimax/speech-02-hd": 0.02,
 }
@@ -103,8 +104,14 @@ def _write_notify_flag(total):
 
 
 def require_key():
+    """Ensure FAL_KEY is set. Falls back to a local gitignored fal.key file."""
     if not os.environ.get("FAL_KEY"):
-        raise SystemExit("FAL_KEY is not set. Run: export FAL_KEY=<your key> and retry.")
+        key_file = ROOT / "fal.key"
+        if key_file.exists():
+            os.environ["FAL_KEY"] = key_file.read_text().strip()
+    if not os.environ.get("FAL_KEY"):
+        raise SystemExit("FAL_KEY is not set. Either export FAL_KEY=<key> or put it "
+                         "in a fal.key file at the repo root, then retry.")
 
 
 def ensure_dirs():

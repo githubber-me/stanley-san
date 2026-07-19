@@ -22,7 +22,7 @@
       "duration": 5,
       "narration": "Twenty-one years. One city. And everything in it.",
       "narration_ja": "21年。ひとつの街。その、すべて。",
-      "still_prompt": "Place him in a window seat of a commercial airplane parked at the gate, soft god-rays of morning light through the window, Bengaluru airport and hazy anime city skyline visible past the glass. He wears his same black t-shirt and glasses, pensive half-smile, head turned slightly toward the window, wistful anime protagonist framing.",
+      "still_prompt": "Place him in a window seat of a commercial airplane at the gate, soft cool morning light through the window, Bengaluru airport and hazy anime city skyline visible past the glass. He wears his same black t-shirt and glasses. He looks SAD and wistful — downcast melancholy eyes gazing out the window, lips pressed in a quiet frown, a single faint reflection of the city on his glasses, heavy-hearted leaving-home mood. No smile. Medium close-up, wistful anime protagonist framing.",
       "motion_prompt": "He gazes out of the airplane window with a pensive half-smile, blinks slowly, anime light rays and dust motes drift through the cabin, soft reflections slide across the glass. Very slow cinematic camera drift. His face, glasses and clothing stay exactly the same."
     },
     {
@@ -41,7 +41,7 @@
       "duration": 5,
       "narration": "Some days we chased the fog up a mountain…",
       "narration_ja": "霧を追いかけて、山を登った日もあった…",
-      "still_prompt": "Keep his misty hilltop setting redrawn as epic anime: he stands at a foggy mountain overlook like the protagonist of a shonen opening, wild windblown curly hair, black browline glasses, maroon windbreaker with drawstrings, swirling painted fog and glowing green hills behind, dramatic rim light.",
+      "still_prompt": "WIDE establishing shot: he is a small figure standing at the edge of a vast misty mountain ridge, seen from a distance with huge swirling fog, layered glowing green hills and a dramatic sky filling most of the frame, epic shonen-opening scale. He has wild windblown curly hair, is clearly wearing his black browline GLASSES, and his maroon windbreaker with drawstrings billowing in the wind, dramatic rim light. Keep the glasses clearly visible.",
       "motion_prompt": "Dramatic anime wind billows his curly hair and maroon windbreaker with visible wind streaks, fog swirls cinematically behind him, he holds a steady protagonist gaze then breaks into a confident smirk as light flares behind him. Slow heroic camera drift. Face, glasses and clothing unchanged."
     },
     {
@@ -60,7 +60,7 @@
       "duration": 3,
       "narration": "…some said everything without saying much.",
       "narration_ja": "多くを語らず、すべてを伝えるやつもいた。",
-      "still_prompt": "Keep his foggy white lakeside setting as minimalist anime art: vast pale luminous mist filling most of the frame like negative space, he stands at the right side in his same white knit zip-collar sweater with red stripe, tousled dark hair, calm serious anime gaze at the camera, subtle floating mist particles.",
+      "still_prompt": "WIDE minimalist anime art shot: a lone small figure standing at the right side against an enormous fog-white lake and pale luminous sky that fill almost the entire frame as negative space, distant misty shoreline. He wears his same white knit zip-collar sweater with red stripe, tousled dark hair, calm quiet expression, subtle floating mist particles, contemplative art-film composition.",
       "motion_prompt": "He holds a quiet steady gaze, then gives the faintest nod and hint of a smile, luminous mist slowly swirling across the vast white background, hair moving slightly. Minimal, contemplative art-film anime motion."
     },
     {
@@ -146,7 +146,7 @@
       "duration": 3,
       "narration": "The people who made a city a home.",
       "narration_ja": "この街を『家』にしてくれた人たち。",
-      "still_prompt": "Keep her simple portrait setting with a soft marble-textured wall behind, redrawn as a tender anime portrait with warm backlight halo. She has long dark hair over her shoulders, small earrings, and her same warm bright smile, framed chest-up, glowing soft light and drifting light particles.",
+      "still_prompt": "Tender anime portrait, keep her exact face and likeness: a young woman with long straight dark hair over her shoulders, small dangling earrings, warm bright genuine smile, round soft face — match the reference face closely. She is wearing an elegant SAREE (draped pallu over one shoulder, matching blouse), warm festive colors. Soft marble-textured wall behind with a warm backlight halo, glowing soft light and drifting light particles, framed chest-up. Emotional-climax warmth.",
       "motion_prompt": "Her hair sways softly, her smile deepens warmly, golden anime light blooms gently across the frame with floating light particles. Minimal, tender emotional-climax motion. Face unchanged."
     },
     {
@@ -165,7 +165,7 @@
       "duration": 5,
       "narration": "A new city. New streets. No familiar faces…",
       "narration_ja": "新しい街。知らない道。知った顔は、ない…",
-      "still_prompt": "Place him standing at the Marine Drive seaside promenade in Mumbai at dusk, painted anime sea and the curving necklace of street lights behind him, warm city glow against a deep blue evening sky with stars appearing. He wears his same black t-shirt and glasses, hands relaxed, quiet thoughtful expression looking toward the sea, lonely-beautiful anime framing.",
+      "still_prompt": "WIDE establishing shot: a small lone figure of him standing far along the great sweeping curve of the Marine Drive seaside promenade in Mumbai at dusk, the vast painted anime sea and the long glowing necklace of street lights curving away into the distance, warm city skyline glow against a deep blue starry evening sky filling the frame, lonely-beautiful cinematic scale. He wears his same black t-shirt and glasses, seen from behind-side gazing at the sea. He has a heavier, bulkier, fuller body build (chubby, broad build — match the real person, NOT slim or athletic). Emphasize the vastness and his smallness.",
       "motion_prompt": "Sea breeze moves his hair, he gazes out at the water thoughtfully, painted waves rolling softly, street lights along Marine Drive twinkling on one by one behind him, a distant train of lights. Slow, wistful anime camera drift. Face, glasses and black t-shirt unchanged."
     },
     {
@@ -202,7 +202,10 @@
     }
   ],
   "music": {
-    "model": "fal-ai/minimax-music/v1.5",
+    "model": "fal-ai/ace-step",
+    "duration": 95,
+    "tags": "anime ending theme, emotional j-pop ballad, soft warm female vocal, piano, strings, gentle drums, bittersweet, hopeful, cinematic, clean modern production",
+    "model_short": "fal-ai/minimax-music/v1.5",
     "style_prompt": "Emotional Japanese anime ending theme, J-pop ballad, soft warm female vocals, gentle piano and strings intro that builds into a heartfelt full-band final chorus, bittersweet but hopeful, clean modern anime-OST production, around 90 seconds.",
     "lyrics": "[Verse]\nRain on the window, the old streets are glowing\nChai in the evening, the auto horns blowing\nTwenty-one summers, every road knows my name\nPacking a lifetime on a paper plane\n\n[Chorus]\nBut you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home\n\n[Verse]\nNew city lights on a marine drive evening\nSame old laughter in the calls I'm keeping\n\n[Chorus]\nOh you're never away, never away from home\nEvery mile's a memory, you're never alone\nFrom Bengaluru skies to the Mumbai foam\nWherever you go, you're never away from home"
   },

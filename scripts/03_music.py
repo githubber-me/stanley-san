@@ -30,7 +30,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--take", type=int, default=1)
     ap.add_argument("--force", action="store_true")
-    ap.add_argument("--instrumental", action="store_true")
+    ap.add_argument("--instrumental", action="store_true",
+                    help="fallback: instrumental OST (stable-audio), no vocals")
+    ap.add_argument("--short", action="store_true",
+                    help="use minimax-music (great vocals, but only ~20s)")
     args = ap.parse_args()
 
     require_key()
@@ -41,18 +44,25 @@ def main():
         model = INSTRUMENTAL_MODEL
         arguments = {"prompt": INSTRUMENTAL_PROMPT, "seconds_total": 90}
         out = AUDIO / f"instrumental_take{args.take}.mp3"
+    elif args.short:
+        # minimax-music/v1.5: great vocals but short (~20s). `lyrics_prompt` = lyrics.
+        model = music["model_short"]
+        arguments = {"prompt": music["style_prompt"], "lyrics_prompt": music["lyrics"]}
+        out = AUDIO / f"song_short_take{args.take}.mp3"
     else:
+        # ace-step: full-length (~90s) song from tags + lyrics — matches the film runtime.
         model = music["model"]
-        arguments = {"prompt": music["style_prompt"], "lyrics": music["lyrics"]}
+        arguments = {"tags": music["tags"], "lyrics": music["lyrics"],
+                     "duration": music.get("duration", 95)}
         out = AUDIO / f"song_take{args.take}.mp3"
 
     def fn():
         res = fal_client.subscribe(model, arguments=arguments)
         return find_audio_url(res)
 
+    kind = "inst" if args.instrumental else ("short" if args.short else "full")
     fp = fingerprint(model, str(sorted(arguments.items())), args.take)
-    run_cached(f"music:take{args.take}:{'inst' if args.instrumental else 'vocal'}",
-               fp, out, fn, force=args.force, model=model)
+    run_cached(f"music:take{args.take}:{kind}", fp, out, fn, force=args.force, model=model)
     print(f"\nListen to {out}. Generate more takes with --take N, then pass the winner "
           "to 05_assemble.py --song <path>.")
 
